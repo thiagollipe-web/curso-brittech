@@ -9,9 +9,12 @@
 </head>
 <body>
 
+<!-- Grão sutil (CSS puro, sem imagem externa) -->
+<div class="grao" aria-hidden="true"></div>
+
 <header class="topo">
   <div class="container topo-interno">
-    <a class="logo" href="#">Instituto <span>Aprender</span></a>
+    <a class="logo" href="#">Instituto&nbsp;Aprender<sup>®</sup></a>
     <nav class="menu" aria-label="Navegação principal">
       <a href="#sobre">Sobre</a>
       <a href="#destaque">Destaque</a>
@@ -19,6 +22,7 @@
       <a href="#newsletter">Newsletter</a>
       <a href="#contato">Contato</a>
     </nav>
+    <p class="topo-meta">Jardim das Flores — SP<br>Desde 2015</p>
   </div>
 </header>
 
@@ -26,60 +30,59 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <p class="hero-tag">Educação &middot; Comunidade &middot; Futuro</p>
-      <h1>Aprender é um projeto de todos nós</h1>
-      <p class="hero-texto">O Instituto Aprender é um espaço de educação, cultura e acolhimento. Aqui você acompanha nossos projetos, lê histórias da comunidade e descobre como participar.</p>
-      <div class="hero-acoes">
-        <a class="btn btn-principal" href="#posts">Ler o blog</a>
-        <a class="btn btn-secundario" href="#sobre">Conhecer o instituto</a>
+      <p class="hero-kicker reveal">Educação · Comunidade · Futuro</p>
+      <h1 class="reveal">Aprender é um<br>projeto de <em>todos nós</em></h1>
+      <div class="hero-rodape">
+        <p class="hero-texto reveal">O Instituto Aprender é um espaço de educação, cultura e acolhimento. Aqui você acompanha nossos projetos, lê histórias da comunidade e descobre como participar.</p>
+        <div class="hero-acoes reveal">
+          <a class="btn btn-principal" href="#posts">Ler o blog <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-secundario" href="#sobre">Conhecer o instituto</a>
+        </div>
       </div>
+      <p class="hero-indice reveal" aria-hidden="true">01 — Sobre · 02 — Destaque · 03 — Blog · 04 — Newsletter</p>
     </div>
   </section>
-
-  <!-- SOBRE -->
+  <!-- 01 · SOBRE -->
   <section id="sobre" class="sobre">
-    <div class="container sobre-grid">
-      <div>
-        <p class="rotulo">Sobre a instituição</p>
-        <h2>Quem somos</h2>
-        <p>O Instituto Aprender nasceu em 2015, no bairro Jardim das Flores, com uma turma de reforço escolar e um sonho: que nenhuma criança da região ficasse para trás nos estudos.</p>
-        <p>Hoje atendemos mais de 400 alunos com aulas de reforço, oficinas de leitura, esportes e tecnologia — sempre de graça, sempre com a comunidade.</p>
-        <a class="link-seta" href="#contato">Fale com a gente &rarr;</a>
-      </div>
-      <div class="sobre-numeros">
-        <div class="numero"><strong>400+</strong><span>alunos atendidos</span></div>
-        <div class="numero"><strong>35</strong><span>voluntários ativos</span></div>
-        <div class="numero"><strong>120</strong><span>oficinas por ano</span></div>
-        <div class="numero"><strong>10</strong><span>anos de história</span></div>
+    <div class="container">
+      <p class="rotulo reveal"><span class="rotulo-num">01</span> Sobre a instituição</p>
+      <div class="sobre-grid">
+        <div class="reveal">
+          <h2>Quem<br>somos</h2>
+          <p>O Instituto Aprender nasceu em 2015, no bairro Jardim das Flores, com uma turma de reforço escolar e um sonho: que nenhuma criança da região ficasse para trás nos estudos.</p>
+          <p>Hoje atendemos mais de 400 alunos com aulas de reforço, oficinas de leitura, esportes e tecnologia — sempre de graça, sempre com a comunidade.</p>
+          <a class="link-seta" href="#contato">Fale com a gente <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="sobre-numeros">
+          <li class="numero reveal"><strong>400+</strong><span>alunos atendidos</span></li>
+          <li class="numero reveal"><strong>35</strong><span>voluntários ativos</span></li>
+          <li class="numero reveal"><strong>120</strong><span>oficinas por ano</span></li>
+          <li class="numero reveal"><strong>10</strong><span>anos de história</span></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- DESTAQUE -->
+  <!-- 02 · DESTAQUE -->
   <section id="destaque" class="destaque">
     <div class="container">
-      <p class="rotulo">Post em destaque</p>
-      <article class="destaque-card">
-        <div class="destaque-marca" aria-hidden="true">✦</div>
-        <div>
-          <p class="categoria">Projetos</p>
-          <h2>Biblioteca comunitária ganha 2 mil livros novos</h2>
-          <p class="data">20 de novembro de 2026</p>
-          <p>Depois de três meses de campanha, nossa biblioteca comunitária recebeu uma doação histórica: 2 mil livros novos, de literatura infantil a vestibular. A partir de dezembro, o espaço abre também aos sábados, com contação de histórias para as crianças do bairro.</p>
-          <a class="link-seta" href="#posts">Ler a matéria completa &rarr;</a>
-        </div>
+      <p class="rotulo reveal"><span class="rotulo-num">02</span> Post em destaque</p>
+      <article class="destaque-card reveal">
+        <p class="destaque-meta"><span class="categoria">Projetos</span><span class="data">20 de novembro de 2026</span></p>
+        <h2 class="destaque-titulo">Biblioteca comunitária ganha <em>2 mil livros</em> novos</h2>
+        <p class="destaque-texto">Depois de três meses de campanha, nossa biblioteca comunitária recebeu uma doação histórica: 2 mil livros novos, de literatura infantil a vestibular. A partir de dezembro, o espaço abre também aos sábados, com contação de histórias para as crianças do bairro.</p>
+        <a class="link-seta" href="#posts">Ler a matéria completa <span aria-hidden="true">→</span></a>
       </article>
     </div>
   </section>
-
-  <!-- BLOG / POSTS -->
+  <!-- 03 · BLOG / POSTS -->
   <section id="posts" class="blog">
     <div class="container">
-      <p class="rotulo">Blog</p>
-      <h2>Últimas do instituto</h2>
-      <p class="secao-texto">Notícias, projetos e histórias da nossa comunidade. Use a busca ou escolha uma categoria para filtrar.</p>
+      <p class="rotulo reveal"><span class="rotulo-num">03</span> Blog</p>
+      <h2 class="reveal">Últimas do<br>instituto</h2>
+      <p class="secao-texto reveal">Notícias, projetos e histórias da nossa comunidade. Use a busca ou escolha uma categoria para filtrar.</p>
 
-      <div class="filtros">
+      <div class="filtros reveal">
         <label class="busca">
           <span class="sr-only">Buscar posts</span>
           <input type="search" id="campo-busca" placeholder="Buscar pelo título... Ex.: leitura" autocomplete="off">
@@ -95,73 +98,86 @@
 
       <p id="resultado-contagem" class="contagem" aria-live="polite">Mostrando 6 de 6 posts</p>
 
-      <div class="grade-posts" id="grade-posts">
-        <article class="post" data-categoria="Educação" data-titulo="Como a leitura diária transforma o aprendizado das crianças">
-          <p class="categoria">Educação</p>
-          <h3>Como a leitura diária transforma o aprendizado das crianças</h3>
-          <p class="data">18 de novembro de 2026</p>
-          <p class="resumo">Vinte minutos de leitura por dia fazem diferença na escrita, no vocabulário e na concentração. Veja como começar esse hábito em casa.</p>
-          <a class="link-seta" href="#">Ler mais &rarr;</a>
+      <div class="indice-posts" id="grade-posts">
+        <article class="post reveal" data-categoria="Educação" data-titulo="Como a leitura diária transforma o aprendizado das crianças">
+          <span class="post-num" aria-hidden="true">01</span>
+          <div class="post-corpo">
+            <p class="post-meta"><span class="categoria">Educação</span><span class="data">18 de novembro de 2026</span></p>
+            <h3>Como a leitura diária transforma o aprendizado das crianças</h3>
+            <p class="resumo">Vinte minutos de leitura por dia fazem diferença na escrita, no vocabulário e na concentração. Veja como começar esse hábito em casa.</p>
+            <a class="link-seta" href="#">Ler mais <span class="seta" aria-hidden="true">→</span></a>
+          </div>
         </article>
 
-        <article class="post" data-categoria="Projetos" data-titulo="Oficina de robótica abre 30 vagas para adolescentes do bairro">
-          <p class="categoria">Projetos</p>
-          <h3>Oficina de robótica abre 30 vagas para adolescentes do bairro</h3>
-          <p class="data">14 de novembro de 2026</p>
-          <p class="resumo">A nova turma de robótica começa em janeiro. Não precisa ter experiência: basta ter entre 12 e 17 anos e vontade de aprender.</p>
-          <a class="link-seta" href="#">Ler mais &rarr;</a>
+        <article class="post reveal" data-categoria="Projetos" data-titulo="Oficina de robótica abre 30 vagas para adolescentes do bairro">
+          <span class="post-num" aria-hidden="true">02</span>
+          <div class="post-corpo">
+            <p class="post-meta"><span class="categoria">Projetos</span><span class="data">14 de novembro de 2026</span></p>
+            <h3>Oficina de robótica abre 30 vagas para adolescentes do bairro</h3>
+            <p class="resumo">A nova turma de robótica começa em janeiro. Não precisa ter experiência: basta ter entre 12 e 17 anos e vontade de aprender.</p>
+            <a class="link-seta" href="#">Ler mais <span class="seta" aria-hidden="true">→</span></a>
+          </div>
         </article>
 
-        <article class="post" data-categoria="Comunidade" data-titulo="Mutirão de sábado revitaliza a praça em frente ao instituto">
-          <p class="categoria">Comunidade</p>
-          <h3>Mutirão de sábado revitaliza a praça em frente ao instituto</h3>
-          <p class="data">10 de novembro de 2026</p>
-          <p class="resumo">Moradores, alunos e voluntários pintaram bancos, plantaram mudas e instalaram uma pequena horta. A praça agora é de todo mundo.</p>
-          <a class="link-seta" href="#">Ler mais &rarr;</a>
+        <article class="post reveal" data-categoria="Comunidade" data-titulo="Mutirão de sábado revitaliza a praça em frente ao instituto">
+          <span class="post-num" aria-hidden="true">03</span>
+          <div class="post-corpo">
+            <p class="post-meta"><span class="categoria">Comunidade</span><span class="data">10 de novembro de 2026</span></p>
+            <h3>Mutirão de sábado revitaliza a praça em frente ao instituto</h3>
+            <p class="resumo">Moradores, alunos e voluntários pintaram bancos, plantaram mudas e instalaram uma pequena horta. A praça agora é de todo mundo.</p>
+            <a class="link-seta" href="#">Ler mais <span class="seta" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="post reveal" data-categoria="Eventos" data-titulo="Festa junina arrecada R$ 8 mil para a reforma da quadra">
+          <span class="post-num" aria-hidden="true">04</span>
+          <div class="post-corpo">
+            <p class="post-meta"><span class="categoria">Eventos</span><span class="data">5 de novembro de 2026</span></p>
+            <h3>Festa junina arrecada R$ 8 mil para a reforma da quadra</h3>
+            <p class="resumo">Com barracas de comidas típicas, bingo e show de talentos, a festa reuniu mais de 600 pessoas. A reforma começa em dezembro.</p>
+            <a class="link-seta" href="#">Ler mais <span class="seta" aria-hidden="true">→</span></a>
+          </div>
         </article>
 
-        <article class="post" data-categoria="Eventos" data-titulo="Festa junina arrecada R$ 8 mil para a reforma da quadra">
-          <p class="categoria">Eventos</p>
-          <h3>Festa junina arrecada R$ 8 mil para a reforma da quadra</h3>
-          <p class="data">5 de novembro de 2026</p>
-          <p class="resumo">Com barracas de comidas típicas, bingo e show de talentos, a festa reuniu mais de 600 pessoas. A reforma começa em dezembro.</p>
-          <a class="link-seta" href="#">Ler mais &rarr;</a>
+        <article class="post reveal" data-categoria="Educação" data-titulo="Reforço de matemática: 5 dicas para ajudar seu filho em casa">
+          <span class="post-num" aria-hidden="true">05</span>
+          <div class="post-corpo">
+            <p class="post-meta"><span class="categoria">Educação</span><span class="data">28 de outubro de 2026</span></p>
+            <h3>Reforço de matemática: 5 dicas para ajudar seu filho em casa</h3>
+            <p class="resumo">Você não precisa ser bom em matemática para ajudar. Jogos, rotina e paciência valem mais do que fórmulas decoradas.</p>
+            <a class="link-seta" href="#">Ler mais <span class="seta" aria-hidden="true">→</span></a>
+          </div>
         </article>
 
-        <article class="post" data-categoria="Educação" data-titulo="Reforço de matemática: 5 dicas para ajudar seu filho em casa">
-          <p class="categoria">Educação</p>
-          <h3>Reforço de matemática: 5 dicas para ajudar seu filho em casa</h3>
-          <p class="data">28 de outubro de 2026</p>
-          <p class="resumo">Você não precisa ser bom em matemática para ajudar. Jogos, rotina e paciência valem mais do que fórmulas decoradas.</p>
-          <a class="link-seta" href="#">Ler mais &rarr;</a>
-        </article>
-
-        <article class="post" data-categoria="Comunidade" data-titulo="Voluntários contam por que dedicam o sábado ao instituto">
-          <p class="categoria">Comunidade</p>
-          <h3>Voluntários contam por que dedicam o sábado ao instituto</h3>
-          <p class="data">21 de outubro de 2026</p>
-          <p class="resumo">“Aqui eu aprendo tanto quanto ensino”, diz dona Marta, voluntária há 6 anos. Conheça as histórias de quem faz o instituto acontecer.</p>
-          <a class="link-seta" href="#">Ler mais &rarr;</a>
+        <article class="post reveal" data-categoria="Comunidade" data-titulo="Voluntários contam por que dedicam o sábado ao instituto">
+          <span class="post-num" aria-hidden="true">06</span>
+          <div class="post-corpo">
+            <p class="post-meta"><span class="categoria">Comunidade</span><span class="data">21 de outubro de 2026</span></p>
+            <h3>Voluntários contam por que dedicam o sábado ao instituto</h3>
+            <p class="resumo">“Aqui eu aprendo tanto quanto ensino”, diz dona Marta, voluntária há 6 anos. Conheça as histórias de quem faz o instituto acontecer.</p>
+            <a class="link-seta" href="#">Ler mais <span class="seta" aria-hidden="true">→</span></a>
+          </div>
         </article>
       </div>
 
       <p id="sem-resultados" class="sem-resultados" hidden>Nenhum post encontrado. Tente outra palavra ou outra categoria.</p>
     </div>
   </section>
-
-  <!-- NEWSLETTER -->
+  <!-- 04 · NEWSLETTER -->
   <section id="newsletter" class="newsletter">
-    <div class="container newsletter-interno">
-      <div>
-        <h2>Receba nossas novidades por e-mail</h2>
-        <p>Uma vez por mês, sem spam: novos projetos, vagas nas oficinas e histórias da comunidade.</p>
+    <div class="container">
+      <p class="rotulo rotulo-claro reveal"><span class="rotulo-num">04</span> Newsletter</p>
+      <div class="newsletter-interno">
+        <div class="reveal">
+          <h2>Receba nossas novidades por e-mail</h2>
+          <p>Uma vez por mês, sem spam: novos projetos, vagas nas oficinas e histórias da comunidade.</p>
+        </div>
+        <form id="form-newsletter" class="form-newsletter reveal" novalidate>
+          <label class="sr-only" for="email-newsletter">Seu melhor e-mail</label>
+          <input type="email" id="email-newsletter" placeholder="Seu melhor e-mail" required>
+          <button class="btn btn-principal" type="submit">Quero receber</button>
+          <p id="msg-newsletter" class="msg-sucesso" role="status" hidden></p>
+        </form>
       </div>
-      <form id="form-newsletter" class="form-newsletter" novalidate>
-        <label class="sr-only" for="email-newsletter">Seu melhor e-mail</label>
-        <input type="email" id="email-newsletter" placeholder="Seu melhor e-mail" required>
-        <button class="btn btn-principal" type="submit">Quero receber</button>
-        <p id="msg-newsletter" class="msg-sucesso" role="status" hidden></p>
-      </form>
     </div>
   </section>
 </main>
@@ -170,7 +186,7 @@
 <footer id="contato" class="rodape">
   <div class="container rodape-grid">
     <div>
-      <p class="logo rodape-logo">Instituto <span>Aprender</span></p>
+      <p class="logo rodape-logo">Instituto Aprender<sup>®</sup></p>
       <p>Educação, cultura e comunidade no Jardim das Flores desde 2015.</p>
     </div>
     <div>
