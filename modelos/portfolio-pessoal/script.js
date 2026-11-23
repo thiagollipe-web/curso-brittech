@@ -1,8 +1,10 @@
 /* ============================================================
-   Portfólio pessoal — Ana Souza (modelo de exemplo)
+   Portfólio pessoal v2 — Ana Souza (modelo de exemplo)
    - Menu mobile (abrir/fechar)
    - Formulário de contato: valida e mostra mensagem de
      sucesso. NÃO envia nada de verdade (sem back-end).
+   - Reveal ao rolar (IntersectionObserver), com respeito a
+     prefers-reduced-motion.
    ============================================================ */
 
 // ---------- Menu mobile ----------
@@ -11,21 +13,26 @@
   var menu = document.getElementById("menuPrincipal");
   if (!botao || !menu) return;
 
+  function fecharMenu() {
+    menu.classList.remove("aberto");
+    botao.setAttribute("aria-expanded", "false");
+    botao.setAttribute("aria-label", "Abrir menu");
+  }
+
   botao.addEventListener("click", function () {
     var aberto = menu.classList.toggle("aberto");
     botao.setAttribute("aria-expanded", aberto ? "true" : "false");
     botao.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
-    botao.textContent = aberto ? "✕" : "☰";
   });
 
   // Fecha o menu quando o usuário toca em um link (mobile)
   menu.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      menu.classList.remove("aberto");
-      botao.setAttribute("aria-expanded", "false");
-      botao.setAttribute("aria-label", "Abrir menu");
-      botao.textContent = "☰";
-    });
+    link.addEventListener("click", fecharMenu);
+  });
+
+  // Fecha com Esc
+  document.addEventListener("keydown", function (evento) {
+    if (evento.key === "Escape") fecharMenu();
   });
 })();
 
@@ -62,4 +69,32 @@
     form.reset();
     sucesso.scrollIntoView({ behavior: "smooth", block: "center" });
   });
+})();
+
+// ---------- Reveal ao rolar ----------
+(function () {
+  var itens = document.querySelectorAll(".reveal");
+  if (!itens.length) return;
+
+  // Sem animação quando o usuário prefere movimento reduzido
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    itens.forEach(function (el) { el.classList.add("visivel"); });
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    itens.forEach(function (el) { el.classList.add("visivel"); });
+    return;
+  }
+
+  var observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("visivel");
+        observador.unobserve(entrada.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  itens.forEach(function (el) { observador.observe(el); });
 })();
