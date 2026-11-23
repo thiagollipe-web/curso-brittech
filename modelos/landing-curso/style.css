@@ -1,0 +1,391 @@
+/* ============================================================
+   LANDING PAGE — CURSO (modelo Brittech)
+   Paleta: roxo + laranja vibrante
+   TROQUE AS CORES AQUI (basta mudar os valores abaixo):
+   ============================================================ */
+:root {
+  --roxo: #6d28d9;          /* roxo principal */
+  --roxo-escuro: #4c1d95;   /* roxo escuro (fundo das seções) */
+  --roxo-claro: #ede9fe;    /* roxo bem claro (fundos suaves) */
+  --laranja: #ff6b00;       /* laranja vibrante (botões e destaques) */
+  --laranja-escuro: #e85d00;
+  --amarelo: #ffb703;       /* detalhe / selo */
+  --texto: #1f1b2e;
+  --texto-claro: #5b5470;
+  --branco: #ffffff;
+  --fundo: #faf8ff;
+  --borda: #e5ddf5;
+  --raio: 14px;
+  --sombra: 0 8px 24px rgba(76, 29, 149, 0.14);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+  line-height: 1.6;
+}
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.container-estreito { max-width: 780px; }
+
+a { color: var(--roxo); }
+img { max-width: 100%; }
+
+/* ---------- Faixa de aviso do modelo ---------- */
+.aviso-modelo {
+  background: var(--amarelo);
+  color: #3d2c00;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+
+/* ---------- Topo / menu ---------- */
+.topo {
+  background: var(--branco);
+  border-bottom: 2px solid var(--borda);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.topo-interno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--roxo);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--laranja); }
+.menu { display: flex; align-items: center; gap: 22px; }
+.menu a { text-decoration: none; color: var(--texto); font-weight: 600; font-size: 0.95rem; }
+.menu a:hover { color: var(--roxo); }
+.menu-btn {
+  display: none;
+  background: var(--roxo);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+  text-align: center;
+}
+.btn:hover { background: var(--laranja-escuro); transform: translateY(-2px); }
+.btn-grande { font-size: 1.1rem; padding: 18px 34px; }
+.btn-pequeno { padding: 10px 18px; font-size: 0.9rem; }
+.btn-secundario {
+  background: var(--branco);
+  color: var(--roxo);
+  border: 2px solid var(--roxo);
+}
+.btn-secundario:hover { background: var(--roxo-claro); }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--roxo-escuro) 0%, var(--roxo) 55%, #9333ea 100%);
+  color: var(--branco);
+  padding: 64px 0 72px;
+}
+.hero-grade { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+.selo {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+.hero h1 { font-size: 2.6rem; line-height: 1.15; letter-spacing: -0.5px; }
+.hero h1 span { color: var(--amarelo); }
+.subtitulo { font-size: 1.15rem; margin: 20px 0 28px; opacity: 0.95; }
+.hero-acoes { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-acoes .btn-secundario { background: transparent; color: var(--branco); border-color: var(--branco); }
+.hero-acoes .btn-secundario:hover { background: rgba(255,255,255,0.15); }
+.hero-confianca {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 24px;
+  font-weight: 600;
+}
+.hero-urgencia { margin-top: 18px; background: rgba(0,0,0,0.25); padding: 12px 16px; border-radius: 10px; }
+.hero-urgencia del { opacity: 0.8; }
+
+/* Vitrine só com CSS */
+.hero-visual { position: relative; }
+.mockup {
+  background: var(--branco);
+  color: var(--texto);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  transform: rotate(2deg);
+}
+.mockup-barra { display: flex; gap: 6px; margin-bottom: 16px; }
+.mockup-barra span { width: 12px; height: 12px; border-radius: 50%; background: var(--roxo); opacity: 0.35; }
+.mockup-barra span:first-child { background: var(--laranja); opacity: 1; }
+.mockup-titulo { font-size: 1.4rem; font-weight: 900; color: var(--roxo); }
+.mockup-aula { background: var(--roxo-claro); border-radius: 10px; padding: 12px; margin: 14px 0; font-weight: 600; }
+.mockup-progresso { height: 10px; background: var(--borda); border-radius: 999px; overflow: hidden; }
+.mockup-progresso span { display: block; width: 65%; height: 100%; background: var(--laranja); }
+.mockup-legenda { color: var(--texto-claro); font-size: 0.9rem; margin-top: 8px; }
+.mockup-preco { font-size: 1.8rem; font-weight: 900; color: var(--laranja); margin-top: 14px; }
+.mockup-preco small { font-size: 0.9rem; color: var(--texto-claro); font-weight: 600; }
+.balao {
+  position: absolute;
+  background: var(--amarelo);
+  color: #3d2c00;
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 999px;
+  box-shadow: var(--sombra);
+}
+.balao-1 { top: -14px; right: -6px; transform: rotate(4deg); }
+.balao-2 { bottom: -14px; left: -10px; background: var(--branco); color: var(--roxo); }
+
+/* ---------- Faixa de prova social ---------- */
+.faixa { background: var(--laranja); color: var(--branco); padding: 18px 0; }
+.faixa-interna { display: flex; flex-wrap: wrap; gap: 12px 40px; justify-content: center; text-align: center; }
+.faixa span { opacity: 0.85; font-weight: 400; font-size: 0.9rem; }
+
+/* ---------- Seções ---------- */
+.secao { padding: 72px 0; }
+.secao h2 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; text-align: center; }
+.secao-sub { text-align: center; color: var(--texto-claro); max-width: 640px; margin: 0 auto 36px; }
+.rotulo {
+  text-align: center;
+  color: var(--laranja);
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+.rotulo-claro { color: var(--amarelo); }
+.secao-roxa { background: var(--roxo-escuro); color: var(--branco); }
+.secao-roxa .secao-sub { color: #d8ccf5; }
+.secao-roxa h2 { color: var(--branco); }
+
+/* ---------- Cartões de benefícios / depoimentos ---------- */
+.grade-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cartao {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 26px;
+  box-shadow: var(--sombra);
+}
+.cartao h3 { margin: 10px 0 8px; font-size: 1.15rem; }
+.cartao p { color: var(--texto-claro); }
+.icone {
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--roxo-claro);
+  color: var(--roxo);
+  font-size: 1.6rem;
+  font-weight: 900;
+  border-radius: 14px;
+}
+.aviso-exemplo {
+  background: #fff7e0;
+  border: 2px dashed var(--amarelo);
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: #5c4300;
+}
+.estrelas { color: var(--laranja); font-size: 1.2rem; letter-spacing: 2px; }
+.depoimento p:not(.estrelas):not(.depoente) { color: var(--texto); font-style: italic; margin: 10px 0 18px; }
+.depoente { display: flex; align-items: center; gap: 10px; color: var(--texto); font-size: 0.95rem; }
+.avatar-css {
+  width: 40px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--roxo);
+  color: var(--branco);
+  font-weight: 900;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ---------- Módulos ---------- */
+.modulos { list-style: none; max-width: 780px; margin: 0 auto 28px; }
+.modulos li {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+}
+.modulos li span {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--branco);
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-top: 8px;
+}
+.bônus {
+  max-width: 780px; margin: 0 auto 28px;
+  background: rgba(255,183,3,0.15);
+  border: 1px solid var(--amarelo);
+  border-radius: 12px;
+  padding: 16px 20px;
+  text-align: center;
+}
+.secao-roxa .btn { display: block; width: fit-content; margin: 0 auto; }
+
+/* ---------- Preço ---------- */
+.secao-preco { background: var(--roxo-claro); }
+.cartao-preco {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--branco);
+  border: 3px solid var(--laranja);
+  border-radius: 20px;
+  padding: 36px 32px;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(76, 29, 149, 0.2);
+}
+.preco-antigo { color: var(--texto-claro); }
+.preco-atual { font-size: 3.4rem; font-weight: 900; color: var(--roxo); line-height: 1.1; }
+.preco-atual span { font-size: 1.4rem; }
+.preco-parcela { color: var(--texto-claro); margin: 6px 0 22px; }
+.preco-parcela em { font-size: 0.85rem; }
+.preco-inclui { list-style: none; text-align: left; margin-bottom: 26px; }
+.preco-inclui li { padding: 8px 0; border-bottom: 1px solid var(--borda); }
+.preco-seguro { margin-top: 16px; color: var(--texto-claro); font-size: 0.9rem; }
+.preco-garantia {
+  margin-top: 14px;
+  background: #eafaf0;
+  border: 1px solid #9adbb4;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.95rem;
+}
+
+/* ---------- FAQ (acordeão) ---------- */
+.faq-item {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.faq-pergunta {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  border: none;
+  padding: 18px 20px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--texto);
+  text-align: left;
+  cursor: pointer;
+}
+.faq-pergunta:hover { color: var(--roxo); }
+.faq-seta {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--roxo-claro);
+  color: var(--roxo);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  transition: transform 0.2s ease;
+}
+.faq-item.aberto .faq-seta { transform: rotate(45deg); background: var(--laranja); color: var(--branco); }
+.faq-resposta { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-resposta p { padding: 0 20px 20px; color: var(--texto-claro); }
+.faq-ajuda { text-align: center; margin-top: 24px; }
+
+/* ---------- CTA final ---------- */
+.cta-final {
+  background: linear-gradient(135deg, var(--laranja) 0%, #ff8c1a 60%, var(--amarelo) 100%);
+  color: var(--branco);
+  text-align: center;
+  padding: 64px 20px;
+}
+.cta-final h2 { font-size: 2rem; margin-bottom: 12px; }
+.cta-final p { max-width: 560px; margin: 0 auto 28px; font-size: 1.1rem; }
+.cta-final .btn { background: var(--roxo-escuro); }
+.cta-final .btn:hover { background: var(--roxo); }
+
+/* ---------- Rodapé ---------- */
+.rodape { background: var(--roxo-escuro); color: #d8ccf5; padding: 40px 0; text-align: center; }
+.rodape .logo { color: var(--branco); }
+.rodape p { margin-bottom: 10px; }
+.rodape a { color: var(--amarelo); }
+.rodape-copy { font-size: 0.9rem; opacity: 0.8; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 860px) {
+  .hero-grade { grid-template-columns: 1fr; gap: 40px; }
+  .grade-cards { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 2.1rem; }
+}
+
+@media (max-width: 640px) {
+  .menu-btn { display: block; }
+  .menu {
+    display: none;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--branco);
+    border-bottom: 2px solid var(--borda);
+    padding: 12px 20px 20px;
+    gap: 4px;
+  }
+  .menu.aberto { display: flex; }
+  .menu a { padding: 12px 4px; border-bottom: 1px solid var(--borda); }
+  .menu a.btn { border-bottom: none; margin-top: 10px; color: var(--branco); }
+  .topo-interno { position: relative; }
+
+  .secao { padding: 52px 0; }
+  .secao h2, .cta-final h2 { font-size: 1.6rem; }
+  .hero { padding: 44px 0 52px; }
+  .hero h1 { font-size: 1.8rem; }
+  .grade-cards { grid-template-columns: 1fr; }
+  .hero-acoes .btn { width: 100%; }
+  .preco-atual { font-size: 2.8rem; }
+  .cartao-preco { padding: 28px 20px; }
+  .balao-1 { right: 4px; }
+}
