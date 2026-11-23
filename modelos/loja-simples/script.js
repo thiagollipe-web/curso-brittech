@@ -1,10 +1,12 @@
 /* ============================================================
-   Loja Verde — carrinho simples (só JavaScript, sem servidor)
+   Loja Verde v2 — carrinho simples (só JavaScript, sem servidor)
    ------------------------------------------------------------
    PARA TROCAR OS PRODUTOS: edite a lista PRODUTOS abaixo.
    Cada produto tem: id, nome, preco (em reais, com ponto),
    descricao, icone (letra ou símbolo) e cor (classe CSS em style.css).
    ============================================================ */
+
+document.documentElement.classList.add("js");
 
 const PRODUTOS = [
   { id: 1, nome: "Sabonete Artesanal de Lavanda", preco: 18.90, descricao: "Sabonete feito à mão com óleo essencial de lavanda. Suave para a pele.", icone: "S", cor: "cor-1" },
@@ -42,23 +44,27 @@ function totalDoCarrinho() {
   }, 0);
 }
 
-// ---------- Montar a grade de produtos ----------
+// ---------- Montar a grade de produtos (índice editorial) ----------
 
 function montarProdutos() {
   const grade = document.getElementById("grade-produtos");
   grade.innerHTML = "";
 
-  PRODUTOS.forEach(function (produto) {
+  PRODUTOS.forEach(function (produto, indice) {
+    const numero = String(indice + 1).padStart(2, "0");
     const artigo = document.createElement("article");
-    artigo.className = "cartao-produto";
+    artigo.className = "cartao-produto reveal";
+    // Entrada escalonada: cada cartão entra um pouco depois do anterior.
+    artigo.style.setProperty("--atraso", (indice * 70) + "ms");
     artigo.innerHTML =
       '<div class="imagem-produto ' + produto.cor + '" aria-hidden="true">' + produto.icone + "</div>" +
+      '<span class="indice-produto" aria-hidden="true">' + numero + "</span>" +
       '<div class="corpo-produto">' +
       "<h3>" + produto.nome + "</h3>" +
       "<p>" + produto.descricao + "</p>" +
+      "</div>" +
       '<p class="preco">' + formatarPreco(produto.preco) + "</p>" +
-      '<button class="botao-adicionar" type="button" data-id="' + produto.id + '">Adicionar</button>' +
-      "</div>";
+      '<button class="botao-adicionar" type="button" data-id="' + produto.id + '">Adicionar<span class="seta" aria-hidden="true">→</span></button>';
     grade.appendChild(artigo);
   });
 
@@ -76,6 +82,7 @@ function adicionarAoCarrinho(id) {
   if (!produto) return;
   carrinho[id] = (carrinho[id] || 0) + 1;
   atualizarCarrinho();
+  pulsarContador();
   mostrarAviso(produto.nome + " adicionado ao carrinho.");
 }
 
@@ -183,6 +190,35 @@ function mostrarAviso(texto) {
   temporizadorAviso = setTimeout(function () { aviso.hidden = true; }, 2500);
 }
 
+// ---------- Feedback visual: o contador pulsa ao adicionar ----------
+
+function pulsarContador() {
+  const contador = document.getElementById("contador-carrinho");
+  contador.classList.remove("pulso");
+  // Força o navegador a reiniciar a animação mesmo em cliques seguidos.
+  void contador.offsetWidth;
+  contador.classList.add("pulso");
+}
+
+// ---------- Reveal ao rolar (IntersectionObserver) ----------
+
+function ativarReveal() {
+  const alvos = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    alvos.forEach(function (el) { el.classList.add("visivel"); });
+    return;
+  }
+  const observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("visivel");
+        observador.unobserve(entrada.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  alvos.forEach(function (el) { observador.observe(el); });
+}
+
 // ---------- Início ----------
 
 document.getElementById("botao-abrir-carrinho").addEventListener("click", abrirCarrinho);
@@ -196,3 +232,4 @@ document.addEventListener("keydown", function (evento) {
 
 montarProdutos();
 atualizarCarrinho();
+ativarReveal();

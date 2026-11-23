@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Loja Verde — produtos naturais. Modelo de vitrine de loja simples para o curso Brittech: Seu Primeiro Site com IA.">
+  <meta name="description" content="Loja Verde — produtos naturais. Modelo de vitrine de loja simples para o curso Brittech: Seu Primeiro Site com IA. Versão 2, com direção editorial.">
   <title>Loja Verde — Produtos Naturais</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,10 +11,7 @@
 
   <header class="topo">
     <div class="container topo-interno">
-      <a class="logo" href="#">
-        <span class="logo-icone" aria-hidden="true">LV</span>
-        <span class="logo-texto">Loja Verde <small>produtos naturais</small></span>
-      </a>
+      <a class="logo" href="#">Loja&nbsp;Verde<sup>®</sup></a>
 
       <nav class="menu" aria-label="Navegação principal">
         <a href="#produtos">Produtos</a>
@@ -29,32 +26,37 @@
   </header>
 
   <main>
-    <!-- Vitrine / apresentação da loja -->
+    <!-- 00 — Vitrine / apresentação da loja -->
     <section class="destaque">
-      <div class="container destaque-interno">
-        <div>
-          <p class="etiqueta">Exemplo fictício — troque pelos seus produtos</p>
-          <h1>Produtos naturais, direto para a sua casa.</h1>
-          <p class="subtitulo">Sabonetes, chás, mel e cosméticos artesanais. Escolha os produtos, monte o carrinho e finalize o pedido — simples assim.</p>
-          <div class="acoes-destaque">
-            <a class="botao botao-principal" href="#produtos">Ver produtos</a>
-            <a class="botao botao-secundario" href="#como-funciona">Como comprar</a>
+      <div class="container">
+        <p class="etiqueta reveal">00 — Modelo de exemplo · Troque pelos seus produtos</p>
+        <h1 class="reveal">Produtos<br>naturais,<br><em>direto</em> para<br>a sua casa.</h1>
+
+        <div class="destaque-rodape">
+          <div class="reveal">
+            <p class="subtitulo">Sabonetes, chás, mel e cosméticos artesanais. Escolha os produtos, monte o carrinho e finalize o pedido — simples assim.</p>
+            <div class="acoes-destaque">
+              <a class="botao botao-principal" href="#produtos">Ver produtos <span aria-hidden="true">↓</span></a>
+              <a class="botao botao-secundario" href="#como-funciona">Como comprar</a>
+            </div>
           </div>
-          <p class="aviso-pagamento"><strong>Atenção:</strong> este é um modelo de exemplo. Não há pagamento real aqui — o botão “Finalizar pedido” mostra apenas uma mensagem de demonstração.</p>
+
+          <aside class="cartao-destaque reveal" aria-label="Frete grátis">
+            <p class="cartao-numero">Frete grátis*</p>
+            <p><strong>em pedidos acima de R$ 99,00</strong></p>
+            <p class="cartao-nota">* Texto de exemplo. Troque pela sua regra de frete.</p>
+          </aside>
         </div>
 
-        <div class="cartao-destaque" aria-hidden="true">
-          <span class="cartao-letra">🌿</span>
-          <p><strong>Frete grátis</strong><br>em pedidos acima de R$ 99,00*</p>
-          <p class="cartao-nota">* Texto de exemplo. Troque pela sua regra de frete.</p>
-        </div>
+        <p class="aviso-pagamento reveal"><strong>Atenção:</strong> este é um modelo de exemplo. Não há pagamento real aqui — o botão “Finalizar pedido” mostra apenas uma mensagem de demonstração.</p>
       </div>
     </section>
 
-    <!-- Grade de produtos: os cartões são gerados pelo script.js -->
+    <!-- 01 — Grade de produtos: os itens são gerados pelo script.js -->
     <section class="produtos" id="produtos">
       <div class="container">
-        <div class="titulo-secao">
+        <div class="titulo-secao reveal">
+          <p class="numero-secao">01 — Índice</p>
           <h2>Nossos produtos</h2>
           <p>8 produtos de exemplo. Troque nome, preço, descrição e cor no arquivo <code>script.js</code>.</p>
         </div>
@@ -66,41 +68,46 @@
       </div>
     </section>
 
-    <!-- Como funciona -->
+    <!-- 02 — Como funciona -->
     <section class="como-funciona" id="como-funciona">
       <div class="container">
-        <h2>Como funciona</h2>
+        <p class="numero-secao reveal">02 — O processo</p>
+        <h2 class="reveal">Como funciona</h2>
         <ol class="passos">
-          <li><strong>1. Escolha</strong><span>Clique em “Adicionar” nos produtos que você quer.</span></li>
-          <li><strong>2. Revise</strong><span>Abra o carrinho, ajuste as quantidades e confira o total.</span></li>
-          <li><strong>3. Finalize</strong><span>Clique em “Finalizar pedido” e veja a mensagem de exemplo.</span></li>
+          <li class="reveal"><strong>01 · Escolha</strong><span>Clique em “Adicionar” nos produtos que você quer.</span></li>
+          <li class="reveal"><strong>02 · Revise</strong><span>Abra o carrinho, ajuste as quantidades e confira o total.</span></li>
+          <li class="reveal"><strong>03 · Finalize</strong><span>Clique em “Finalizar pedido” e veja a mensagem de exemplo.</span></li>
         </ol>
-        <p class="nota">Para vender de verdade, depois você liga um pagamento real (Pix, cartão ou link de pagamento) — veja o passo a passo no <code>README.md</code>.</p>
+        <p class="nota reveal">Para vender de verdade, depois você liga um pagamento real (Pix, cartão ou link de pagamento) — veja o passo a passo no <code>README.md</code>.</p>
       </div>
     </section>
 
-    <!-- Sobre a loja -->
+    <!-- 03 — Sobre a loja -->
     <section class="sobre" id="sobre">
-      <div class="container sobre-interno">
-        <div>
-          <h2>Sobre a Loja Verde</h2>
-          <p>Texto de exemplo: somos uma lojinha fictícia criada para o curso. Vendemos produtos naturais feitos à mão, com ingredientes simples e embalagens reutilizáveis.</p>
-          <p>Troque este texto pela história da sua loja: quem você é, o que vende e por que o cliente pode confiar.</p>
+      <div class="container">
+        <p class="numero-secao reveal">03 — A loja</p>
+        <div class="sobre-interno">
+          <div class="reveal">
+            <h2>Sobre a Loja Verde</h2>
+            <p>Texto de exemplo: somos uma lojinha fictícia criada para o curso. Vendemos produtos naturais feitos à mão, com ingredientes simples e embalagens reutilizáveis.</p>
+            <p>Troque este texto pela história da sua loja: quem você é, o que vende e por que o cliente pode confiar.</p>
+          </div>
+          <ul class="vantagens reveal">
+            <li>✓ Produtos artesanais</li>
+            <li>✓ Ingredientes naturais</li>
+            <li>✓ Envio para todo o Brasil*</li>
+            <li>✓ Atendimento pelo WhatsApp*</li>
+          </ul>
         </div>
-        <ul class="vantagens">
-          <li>✓ Produtos artesanais</li>
-          <li>✓ Ingredientes naturais</li>
-          <li>✓ Envio para todo o Brasil*</li>
-          <li>✓ Atendimento pelo WhatsApp*</li>
-        </ul>
+        <p class="nota-rodape">* Itens com asterisco são textos de exemplo — confirme antes de publicar.</p>
       </div>
-      <p class="container nota-rodape">* Itens com asterisco são textos de exemplo — confirme antes de publicar.</p>
     </section>
   </main>
 
   <footer class="rodape">
     <div class="container rodape-interno">
-      <p><strong>Loja Verde — produtos naturais</strong><br>Modelo de exemplo do curso Brittech — Seu Primeiro Site com IA.</p>
+      <p class="rodape-marca">Loja Verde<sup>®</sup><br><span>produtos naturais</span></p>
+      <p>Modelo de exemplo do curso Brittech — Seu Primeiro Site com IA.</p>
       <p>Contato de exemplo:<br>contato@lojaverde.exemplo<br>(00) 90000-0000</p>
       <p>© 2026 Loja Verde. Todos os direitos reservados.</p>
     </div>
