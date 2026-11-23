@@ -1,5 +1,5 @@
 // ============================================================
-// CANTINA DO ZÉ — COMIDA CASEIRA
+// CANTINA DO ZÉ — COMIDA CASEIRA · v2 (editorial)
 // Modelo do curso Brittech — Seu Primeiro Site com IA
 // Sem dependências externas. Só JavaScript puro.
 // ============================================================
@@ -58,6 +58,31 @@ botoesFiltro.forEach(function (botao) {
     filtrarCardapio(botao.dataset.filtro);
   });
 });
+
+// ---------- Reveal ao rolar ----------
+// Se o navegador não tiver IntersectionObserver, tudo aparece
+// de uma vez (o CSS já deixa .reveal visível sem JS? Não —
+// por isso o fallback abaixo adiciona a classe direto).
+const revelar = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("visivel");
+        observador.unobserve(entrada.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+  revelar.forEach(function (el) {
+    observador.observe(el);
+  });
+} else {
+  revelar.forEach(function (el) {
+    el.classList.add("visivel");
+  });
+}
 
 // ---------- Ano automático no rodapé ----------
 const ano = document.getElementById("ano");
