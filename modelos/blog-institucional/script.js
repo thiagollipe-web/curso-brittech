@@ -1,4 +1,5 @@
-// Blog institucional — busca, filtro por categoria e newsletter
+// Blog institucional v2 — busca, filtro por categoria (com contador),
+// newsletter e reveal ao rolar.
 // Sem dependências externas. Tudo roda no navegador, sem servidor.
 
 (function () {
@@ -18,6 +19,28 @@
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  // Contador de posts em cada botão de categoria.
+  // Ex.: "Educação (2)". O botão "Todas" mostra o total.
+  function atualizarContadores() {
+    botoesFiltro.forEach(function (botao) {
+      var categoria = botao.getAttribute("data-categoria");
+      var total =
+        categoria === "todas"
+          ? posts.length
+          : posts.filter(function (post) {
+              return post.getAttribute("data-categoria") === categoria;
+            }).length;
+
+      var span = botao.querySelector(".contador");
+      if (!span) {
+        span = document.createElement("span");
+        span.className = "contador";
+        botao.appendChild(span);
+      }
+      span.textContent = "(" + total + ")";
+    });
   }
 
   function aplicarFiltros() {
@@ -54,6 +77,36 @@
     });
   });
 
+  atualizarContadores();
+
+  // ---------- Reveal ao rolar (desativado se o usuário prefere menos movimento) ----------
+  var reduzirMovimento = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (!reduzirMovimento && "IntersectionObserver" in window) {
+    var observador = new IntersectionObserver(
+      function (entradas) {
+        entradas.forEach(function (entrada) {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add("visivel");
+            observador.unobserve(entrada.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      observador.observe(el);
+    });
+  } else {
+    // Sem IntersectionObserver ou com movimento reduzido: mostra tudo.
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      el.classList.add("visivel");
+    });
+  }
+
   // ---------- Newsletter (demonstração: não envia nada real) ----------
   var form = document.getElementById("form-newsletter");
   var campoEmail = document.getElementById("email-newsletter");
@@ -65,15 +118,17 @@
     var email = campoEmail.value.trim();
     var emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+    mensagem.hidden = false;
+
     if (!emailValido) {
-      mensagem.hidden = false;
+      mensagem.classList.add("msg-erro");
       mensagem.textContent =
         "Digite um e-mail válido para assinar a newsletter.";
       campoEmail.focus();
       return;
     }
 
-    mensagem.hidden = false;
+    mensagem.classList.remove("msg-erro");
     mensagem.textContent =
       "Obrigado! Sua inscrição foi registrada. (Demonstração — nenhum e-mail foi enviado.)";
     form.reset();
