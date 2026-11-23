@@ -9,23 +9,23 @@
 </head>
 <body>
 
-<!-- ======== AVISO DO MODELO (apague antes de publicar) ========
-     Esta faixa avisa que é um modelo de exemplo. Remova este bloco
-     <div class="aviso-modelo">...</div> quando for usar de verdade.
-============================================================= -->
+<!-- ======== AVISO DO MODELO (apague antes de publicar) ======== -->
 <div class="aviso-modelo">⚠ MODELO DE EXEMPLO — troque os textos, o preço e o link de compra antes de publicar.</div>
+
+<!-- Grão sutil, só CSS (sem imagem externa) -->
+<div class="grao" aria-hidden="true"></div>
 
 <header class="topo">
   <div class="container topo-interno">
-    <a class="logo" href="#topo">Brit<span>tech</span></a>
+    <a class="logo" href="#topo">BRITTECH<sup>®</sup></a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuNav" aria-label="Abrir menu">☰ Menu</button>
     <nav class="menu" id="menuNav" aria-label="Navegação principal">
-      <a href="#beneficios">Benefícios</a>
-      <a href="#aprender">O que você vai aprender</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="#preco">Preço</a>
-      <a href="#faq">Dúvidas</a>
-      <a class="btn btn-pequeno" href="#preco">Quero começar</a>
+      <a href="#beneficios"><span class="menu-num">01</span>Benefícios</a>
+      <a href="#aprender"><span class="menu-num">02</span>O que você vai aprender</a>
+      <a href="#depoimentos"><span class="menu-num">03</span>Depoimentos</a>
+      <a href="#preco"><span class="menu-num">04</span>Preço</a>
+      <a href="#faq"><span class="menu-num">05</span>Dúvidas</a>
+      <a class="btn btn-pequeno" href="#preco">Quero começar <span class="btn-seta" aria-hidden="true">→</span></a>
     </nav>
   </div>
 </header>
@@ -34,35 +34,54 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container hero-grade">
-      <div class="hero-texto">
-        <p class="selo">✦ CURSO ONLINE • COMECE HOJE • ACESSO IMEDIATO</p>
-        <h1>Inglês do Zero: <span>do zero ao seu primeiro diálogo</span> em semanas</h1>
-        <p class="subtitulo">Aprenda inglês com aulas curtas, diretas e práticas — sem enrolação, sem gramática chata e sem precisar sair de casa. Troque este texto pelo resumo do seu curso.</p>
-        <div class="hero-acoes">
-          <a class="btn btn-grande btn-comprar" href="#" data-compra>Quero aprender inglês — R$ 97</a>
-          <a class="btn btn-secundario" href="#aprender">Ver o que vou aprender ↓</a>
-        </div>
-        <ul class="hero-confianca">
-          <li>✓ Acesso por 12 meses</li>
-          <li>✓ Certificado incluído</li>
-          <li>✓ Garantia de 7 dias</li>
-        </ul>
-        <p class="hero-urgencia">🔥 Oferta por tempo limitado: de <del>R$ 197</del> por <strong>R$ 97</strong> — troque este valor pelo seu preço real.</p>
-      </div>
+    <div class="container">
+      <p class="hero-meta reveal"><span>✦ Curso online</span><span>Comece hoje</span><span>Acesso imediato</span><span class="hero-meta-direita">Brittech — 2026</span></p>
 
-      <!-- Vitrine feita só com CSS (sem imagem externa) -->
-      <div class="hero-visual" aria-hidden="true">
-        <div class="mockup">
-          <div class="mockup-barra"><span></span><span></span><span></span></div>
-          <p class="mockup-titulo">Inglês do Zero</p>
-          <p class="mockup-aula">▶ Aula 1 — Hello! Apresentações</p>
-          <div class="mockup-progresso"><span></span></div>
-          <p class="mockup-legenda">Aula 1 de 40 • 12 min</p>
-          <p class="mockup-preco">R$ 97 <small>à vista</small></p>
+      <h1 class="hero-titulo">
+        <span class="linha" style="--d:.05s">Inglês</span>
+        <span class="linha" style="--d:.15s">do zero<span class="ponto">.</span></span>
+        <span class="linha linha-contorno" style="--d:.25s">Ao primeiro</span>
+        <span class="linha" style="--d:.35s">diálogo<span class="destaque"> em</span></span>
+        <span class="linha" style="--d:.45s"><em>semanas</em><span class="ponto">.</span></span>
+      </h1>
+
+      <div class="hero-grade">
+        <div class="hero-texto reveal" style="--d:.55s">
+          <p class="subtitulo">Aprenda inglês com aulas curtas, diretas e práticas — sem enrolação, sem gramática chata e sem precisar sair de casa. Troque este texto pelo resumo do seu curso.</p>
+          <div class="hero-acoes">
+            <a class="btn btn-grande btn-comprar" href="#" data-compra><span>Quero aprender inglês — R$ 97</span><span class="btn-seta" aria-hidden="true">→</span></a>
+            <a class="btn-texto" href="#aprender">Ver o que vou aprender <span aria-hidden="true">↓</span></a>
+          </div>
+          <ul class="hero-confianca">
+            <li>✓ Acesso por 12 meses</li>
+            <li>✓ Certificado incluído</li>
+            <li>✓ Garantia de 7 dias</li>
+          </ul>
         </div>
-        <p class="balao balao-1">“Hello!” 👋</p>
-        <p class="balao balao-2">★ 4,9 / 5</p>
+
+        <aside class="hero-preco reveal" style="--d:.65s" aria-label="Preço do curso">
+          <p class="hero-preco-rotulo">Oferta por tempo limitado</p>
+          <p class="hero-preco-antigo">De <del>R$ 197</del></p>
+          <p class="hero-preco-atual"><small>R$</small>97<small>,00</small></p>
+          <p class="hero-preco-legenda">Pagamento único · Acesso imediato</p>
+          <p class="hero-urgencia">🔥 Troque este valor pelo seu preço real.</p>
+          <!-- Vitrine feita só com CSS (sem imagem externa) -->
+          <div class="mockup" aria-hidden="true">
+            <div class="mockup-barra"><span></span><span></span><span></span></div>
+            <p class="mockup-titulo">Inglês do Zero</p>
+            <p class="mockup-aula">▶ Aula 1 — Hello! Apresentações</p>
+            <div class="mockup-progresso"><span></span></div>
+            <p class="mockup-legenda">Aula 1 de 40 • 12 min</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Marquee de benefícios (duplicado para o loop; a cópia é aria-hidden) -->
+    <div class="marquee" aria-label="Benefícios do curso">
+      <div class="marquee-trilha">
+        <span>Aprenda no seu ritmo ✦ Fale desde a primeira aula ✦ Material para baixar ✦ Certificado incluído ✦ Comunidade de alunos ✦ Garantia de 7 dias ✦&nbsp;</span>
+        <span aria-hidden="true">Aprenda no seu ritmo ✦ Fale desde a primeira aula ✦ Material para baixar ✦ Certificado incluído ✦ Comunidade de alunos ✦ Garantia de 7 dias ✦&nbsp;</span>
       </div>
     </div>
   </section>
@@ -70,65 +89,65 @@
   <!-- PROVA SOCIAL (exemplo) -->
   <section class="faixa">
     <div class="container faixa-interna">
-      <p><strong>+1.200 alunos</strong> <span>(número de exemplo — troque pelo seu)</span></p>
-      <p><strong>★ 4,9 de 5</strong> <span>(avaliação de exemplo)</span></p>
-      <p><strong>40 aulas</strong> <span>• 12 horas de conteúdo</span></p>
+      <p class="reveal"><strong>+1.200</strong><span>alunos</span><small>(número de exemplo — troque pelo seu)</small></p>
+      <p class="reveal" style="--d:.1s"><strong>★ 4,9 / 5</strong><span>avaliação</span><small>(avaliação de exemplo)</small></p>
+      <p class="reveal" style="--d:.2s"><strong>40 aulas</strong><span>12 horas de conteúdo</span></p>
     </div>
   </section>
 
-  <!-- BENEFÍCIOS -->
+  <!-- 01 · BENEFÍCIOS -->
   <section class="secao" id="beneficios">
     <div class="container">
-      <p class="rotulo">POR QUE ESTE CURSO?</p>
-      <h2>Benefícios que fazem diferença de verdade</h2>
-      <p class="secao-sub">Troque cada benefício abaixo pelo benefício real do seu curso ou produto.</p>
+      <p class="secao-num reveal">01 — Por que este curso?</p>
+      <h2 class="reveal">Benefícios que fazem diferença <em>de verdade</em></h2>
+      <p class="secao-sub reveal">Troque cada benefício abaixo pelo benefício real do seu curso ou produto.</p>
       <div class="grade-cards">
-        <article class="cartao"><p class="icone">◷</p><h3>Aprenda no seu ritmo</h3><p>Aulas curtas de 10 a 15 minutos. Assista quando e onde quiser, no celular ou no computador.</p></article>
-        <article class="cartao"><p class="icone">💬</p><h3>Fale desde a primeira aula</h3><p>Exercícios de fala e escuta em toda aula — nada de só decorar regras.</p></article>
-        <article class="cartao"><p class="icone">✓</p><h3>Material para baixar</h3><p>Apostilas, listas de vocabulário e áudios para praticar até sem internet.</p></article>
-        <article class="cartao"><p class="icone">★</p><h3>Certificado incluído</h3><p>Certificado digital ao concluir o curso, para o currículo ou portfólio.</p></article>
-        <article class="cartao"><p class="icone">👥</p><h3>Comunidade de alunos</h3><p>Grupo exclusivo para tirar dúvidas, praticar e não desistir no meio do caminho.</p></article>
-        <article class="cartao"><p class="icone">↻</p><h3>Garantia de 7 dias</h3><p>Se não for para você, peça o reembolso em até 7 dias, sem perguntas complicadas.</p></article>
+        <article class="cartao reveal" style="--d:0s"><p class="cartao-num">01</p><p class="icone">◷</p><h3>Aprenda no seu ritmo</h3><p>Aulas curtas de 10 a 15 minutos. Assista quando e onde quiser, no celular ou no computador.</p><span class="cartao-seta" aria-hidden="true">→</span></article>
+        <article class="cartao reveal" style="--d:.08s"><p class="cartao-num">02</p><p class="icone">💬</p><h3>Fale desde a primeira aula</h3><p>Exercícios de fala e escuta em toda aula — nada de só decorar regras.</p><span class="cartao-seta" aria-hidden="true">→</span></article>
+        <article class="cartao reveal" style="--d:.16s"><p class="cartao-num">03</p><p class="icone">✓</p><h3>Material para baixar</h3><p>Apostilas, listas de vocabulário e áudios para praticar até sem internet.</p><span class="cartao-seta" aria-hidden="true">→</span></article>
+        <article class="cartao reveal" style="--d:0s"><p class="cartao-num">04</p><p class="icone">★</p><h3>Certificado incluído</h3><p>Certificado digital ao concluir o curso, para o currículo ou portfólio.</p><span class="cartao-seta" aria-hidden="true">→</span></article>
+        <article class="cartao reveal" style="--d:.08s"><p class="cartao-num">05</p><p class="icone">👥</p><h3>Comunidade de alunos</h3><p>Grupo exclusivo para tirar dúvidas, praticar e não desistir no meio do caminho.</p><span class="cartao-seta" aria-hidden="true">→</span></article>
+        <article class="cartao reveal" style="--d:.16s"><p class="cartao-num">06</p><p class="icone">↻</p><h3>Garantia de 7 dias</h3><p>Se não for para você, peça o reembolso em até 7 dias, sem perguntas complicadas.</p><span class="cartao-seta" aria-hidden="true">→</span></article>
       </div>
     </div>
   </section>
 
-  <!-- O QUE VOCÊ VAI APRENDER -->
+  <!-- 02 · O QUE VOCÊ VAI APRENDER -->
   <section class="secao secao-roxa" id="aprender">
     <div class="container">
-      <p class="rotulo rotulo-claro">CONTEÚDO DO CURSO</p>
-      <h2>O que você vai aprender</h2>
-      <p class="secao-sub">Exemplo com 5 módulos — troque pelos módulos reais do seu curso.</p>
+      <p class="secao-num secao-num-claro reveal">02 — Conteúdo do curso</p>
+      <h2 class="reveal">O que você vai aprender</h2>
+      <p class="secao-sub reveal">Exemplo com 5 módulos — troque pelos módulos reais do seu curso.</p>
       <ol class="modulos">
-        <li><strong>Módulo 1 — Primeiros passos:</strong> alfabeto, sons do inglês e suas primeiras 50 palavras. <span>6 aulas</span></li>
-        <li><strong>Módulo 2 — Apresentações:</strong> falar de você, cumprimentar e fazer perguntas simples. <span>8 aulas</span></li>
-        <li><strong>Módulo 3 — Dia a dia:</strong> rotina, compras, pedir comida e se virar em viagens. <span>10 aulas</span></li>
-        <li><strong>Módulo 4 — Conversação:</strong> diálogos completos, opiniões e histórias curtas. <span>9 aulas</span></li>
-        <li><strong>Módulo 5 — Prática final:</strong> simulações reais e seu primeiro diálogo completo em inglês. <span>7 aulas</span></li>
+        <li class="reveal"><span class="modulo-num">01</span><div><strong>Módulo 1 — Primeiros passos:</strong> alfabeto, sons do inglês e suas primeiras 50 palavras.</div><span class="modulo-aulas">6 aulas</span></li>
+        <li class="reveal" style="--d:.08s"><span class="modulo-num">02</span><div><strong>Módulo 2 — Apresentações:</strong> falar de você, cumprimentar e fazer perguntas simples.</div><span class="modulo-aulas">8 aulas</span></li>
+        <li class="reveal" style="--d:.16s"><span class="modulo-num">03</span><div><strong>Módulo 3 — Dia a dia:</strong> rotina, compras, pedir comida e se virar em viagens.</div><span class="modulo-aulas">10 aulas</span></li>
+        <li class="reveal" style="--d:.24s"><span class="modulo-num">04</span><div><strong>Módulo 4 — Conversação:</strong> diálogos completos, opiniões e histórias curtas.</div><span class="modulo-aulas">9 aulas</span></li>
+        <li class="reveal" style="--d:.32s"><span class="modulo-num">05</span><div><strong>Módulo 5 — Prática final:</strong> simulações reais e seu primeiro diálogo completo em inglês.</div><span class="modulo-aulas">7 aulas</span></li>
       </ol>
-      <p class="bônus"><strong>Bônus de exemplo:</strong> guia de pronúncia em PDF + lista com 300 frases prontas. Troque pelos seus bônus reais.</p>
-      <a class="btn btn-grande btn-comprar" href="#" data-compra>Quero acesso completo — R$ 97</a>
+      <p class="bonus reveal"><strong>Bônus de exemplo:</strong> guia de pronúncia em PDF + lista com 300 frases prontas. Troque pelos seus bônus reais.</p>
+      <a class="btn btn-grande btn-comprar btn-centro reveal" href="#" data-compra><span>Quero acesso completo — R$ 97</span><span class="btn-seta" aria-hidden="true">→</span></a>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS (EXEMPLOS) -->
+  <!-- 03 · DEPOIMENTOS (EXEMPLOS) -->
   <section class="secao" id="depoimentos">
     <div class="container">
-      <p class="rotulo">DEPOIMENTOS</p>
-      <h2>Quem já começou, recomenda</h2>
-      <p class="secao-sub aviso-exemplo">⚠ ATENÇÃO: os depoimentos abaixo são <strong>EXEMPLOS FICTÍCIOS</strong> — apague e coloque depoimentos reais dos seus alunos, com nome e foto (com autorização).</p>
+      <p class="secao-num reveal">03 — Depoimentos</p>
+      <h2 class="reveal">Quem já começou, recomenda</h2>
+      <p class="secao-sub aviso-exemplo reveal">⚠ ATENÇÃO: os depoimentos abaixo são <strong>EXEMPLOS FICTÍCIOS</strong> — apague e coloque depoimentos reais dos seus alunos, com nome e foto (com autorização).</p>
       <div class="grade-cards">
-        <article class="cartao depoimento">
+        <article class="cartao depoimento reveal" style="--d:0s">
           <p class="estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
           <p>“Eu nunca tinha estudado inglês e em 3 semanas já consegui me apresentar. As aulas curtas cabem na minha rotina.”</p>
           <p class="depoente"><span class="avatar-css">M</span> <strong>Mariana S.</strong> — aluna de exemplo</p>
         </article>
-        <article class="cartao depoimento">
+        <article class="cartao depoimento reveal" style="--d:.08s">
           <p class="estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
           <p>“Tentei outros cursos e desisti. Aqui eu pratico falando desde o primeiro dia, e isso mudou tudo para mim.”</p>
           <p class="depoente"><span class="avatar-css">C</span> <strong>Carlos H.</strong> — aluno de exemplo</p>
         </article>
-        <article class="cartao depoimento">
+        <article class="cartao depoimento reveal" style="--d:.16s">
           <p class="estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
           <p>“O material para baixar me ajuda a revisar no ônibus. Recomendo para quem está começando do zero.”</p>
           <p class="depoente"><span class="avatar-css">J</span> <strong>Juliana P.</strong> — aluna de exemplo</p>
@@ -137,12 +156,12 @@
     </div>
   </section>
 
-  <!-- PREÇO / OFERTA -->
+  <!-- 04 · PREÇO / OFERTA -->
   <section class="secao secao-preco" id="preco">
     <div class="container">
-      <p class="rotulo">OFERTA POR TEMPO LIMITADO</p>
-      <h2>Comece hoje por menos que um lanche por semana</h2>
-      <div class="cartao-preco">
+      <p class="secao-num reveal">04 — Oferta por tempo limitado</p>
+      <h2 class="reveal">Comece hoje por menos que um lanche por semana</h2>
+      <div class="cartao-preco reveal">
         <p class="preco-antigo">De <del>R$ 197</del> por apenas</p>
         <p class="preco-atual">R$ 97<span>,00</span></p>
         <p class="preco-parcela">ou 12x de R$ 9,75 no cartão <em>(valores de exemplo — troque pelos seus)</em></p>
@@ -154,53 +173,54 @@
           <li>✓ Acesso por 12 meses</li>
           <li>✓ Garantia incondicional de 7 dias</li>
         </ul>
-        <a class="btn btn-grande btn-comprar" href="#" data-compra>QUERO ME INSCREVER AGORA</a>
+        <a class="btn btn-grande btn-comprar btn-largo" href="#" data-compra><span>Quero me inscrever agora</span><span class="btn-seta" aria-hidden="true">→</span></a>
         <p class="preco-seguro">🔒 Compra segura • Pagamento único • Acesso imediato após a confirmação</p>
         <p class="preco-garantia">🛡 <strong>Garantia de 7 dias:</strong> se não gostar, devolvemos 100% do valor.</p>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- 05 · FAQ -->
   <section class="secao" id="faq">
     <div class="container container-estreito">
-      <p class="rotulo">DÚVIDAS FREQUENTES</p>
-      <h2>Perguntas frequentes</h2>
-      <p class="secao-sub">Clique em uma pergunta para ver a resposta. Troque as perguntas e respostas pelas dúvidas reais dos seus alunos.</p>
+      <p class="secao-num reveal">05 — Dúvidas frequentes</p>
+      <h2 class="reveal">Perguntas frequentes</h2>
+      <p class="secao-sub reveal">Clique em uma pergunta para ver a resposta. Troque as perguntas e respostas pelas dúvidas reais dos seus alunos.</p>
 
       <div class="faq">
-        <div class="faq-item">
+        <div class="faq-item reveal">
           <button class="faq-pergunta" aria-expanded="false">Preciso saber alguma coisa de inglês para começar?<span class="faq-seta">+</span></button>
           <div class="faq-resposta"><p>Não. O curso foi feito para quem está começando do zero — a primeira aula parte do básico, passo a passo.</p></div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal" style="--d:.06s">
           <button class="faq-pergunta" aria-expanded="false">Por quanto tempo tenho acesso ao curso?<span class="faq-seta">+</span></button>
           <div class="faq-resposta"><p>Por 12 meses a partir da compra, com acesso a todas as aulas e atualizações nesse período. Troque este prazo pelo prazo real do seu curso.</p></div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal" style="--d:.12s">
           <button class="faq-pergunta" aria-expanded="false">Recebo certificado ao concluir?<span class="faq-seta">+</span></button>
           <div class="faq-resposta"><p>Sim. Ao concluir todas as aulas você recebe um certificado digital, que pode baixar e incluir no currículo.</p></div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal" style="--d:.18s">
           <button class="faq-pergunta" aria-expanded="false">E se eu não gostar do curso?<span class="faq-seta">+</span></button>
           <div class="faq-resposta"><p>Você tem 7 dias de garantia incondicional. Basta pedir o reembolso dentro desse prazo e devolvemos 100% do valor.</p></div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal" style="--d:.24s">
           <button class="faq-pergunta" aria-expanded="false">Como recebo o acesso depois da compra?<span class="faq-seta">+</span></button>
           <div class="faq-resposta"><p>Após a confirmação do pagamento, você recebe o acesso por e-mail. Troque esta resposta pelo processo real da sua plataforma (ex.: Kiwify, Hotmart).</p></div>
         </div>
       </div>
 
-      <p class="faq-ajuda">Ainda tem dúvida? <a href="mailto:contato@exemplo.com">contato@exemplo.com</a> <em>(e-mail de exemplo — troque pelo seu)</em></p>
+      <p class="faq-ajuda reveal">Ainda tem dúvida? <a href="mailto:contato@exemplo.com">contato@exemplo.com</a> <em>(e-mail de exemplo — troque pelo seu)</em></p>
     </div>
   </section>
 
   <!-- CTA FINAL -->
   <section class="cta-final">
     <div class="container">
-      <h2>Pronto para começar do zero?</h2>
-      <p>Daqui a algumas semanas, você pode estar se apresentando em inglês — ou pode continuar adiando. A escolha é sua.</p>
-      <a class="btn btn-grande btn-comprar" href="#" data-compra>Começar agora — R$ 97</a>
+      <p class="secao-num secao-num-claro reveal">Pronto?</p>
+      <h2 class="reveal">Pronto para começar <em>do zero?</em></h2>
+      <p class="reveal">Daqui a algumas semanas, você pode estar se apresentando em inglês — ou pode continuar adiando. A escolha é sua.</p>
+      <a class="btn btn-grande btn-comprar btn-centro reveal" href="#" data-compra><span>Começar agora — R$ 97</span><span class="btn-seta" aria-hidden="true">→</span></a>
     </div>
   </section>
 
@@ -208,7 +228,7 @@
 
 <footer class="rodape">
   <div class="container rodape-interno">
-    <p><a class="logo" href="#topo">Brit<span>tech</span></a></p>
+    <p><a class="logo logo-rodape" href="#topo">BRITTECH<sup>®</sup></a></p>
     <p>Modelo de landing page para curso — textos e valores de exemplo. Troque pelo conteúdo real antes de publicar.</p>
     <p class="rodape-links">
       <a href="#faq">Dúvidas frequentes</a> •
